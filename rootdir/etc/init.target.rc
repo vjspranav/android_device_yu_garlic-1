@@ -34,6 +34,7 @@ on post-fs data
     mkdir /data/goodix 0700 system system
 
 on boot
+
     chown system system  /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
 
@@ -57,3 +58,30 @@ on property:persist.sys.fp.goodix=0
 
 on property:persist.sys.fp.goodix=1
     start gx_fpd
+
+    # change file owner for factory test
+    chown system system /sys/devices/virtual/touchscreen/touchscreen_dev/firmware_version
+    chown system system /sys/devices/virtual/touchscreen/touchscreen_dev/firmware_update
+    chown system system /sys/devices/virtual/touchscreen/touchscreen_dev/calibrate
+
+    # Notification LED
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/led_time
+    chown system system /sys/class/leds/green/led_time
+    chown system system /sys/class/leds/blue/led_time
+
+    # Touchscreen
+    chown system system /sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl
+    chmod 0660 /sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl
+
+    chown root system /sys/devices/soc.0/78b9000.i2c/i2c-5/5-005d/keypad_enable
+    chmod 0660 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-005d/keypad_enable
+
+service_redefine config_bt_addr /system/bin/btnvtool -b /system/bin/yl_btmac
+    class core
+    user bluetooth
+    group bluetooth radio
+    oneshot
+

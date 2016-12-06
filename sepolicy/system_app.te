@@ -1,2 +1,4 @@
 # Allow binder calls to fingerprintd
 binder_call(system_app, fingerprintd)
+
+allow system_app sensors_device:chr_file rw_file_perms;

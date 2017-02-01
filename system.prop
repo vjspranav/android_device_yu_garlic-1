@@ -56,6 +56,7 @@ ro.qualcomm.bluetooth.pbap=true
 ro.qualcomm.bt.hci_transport=smd
 
 # Camera
+<<<<<<< HEAD
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
 persist.camera.is_type=1
@@ -66,6 +67,19 @@ media.camera.ts.monotonic=0
 vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
+=======
+persist.camera.imglib.fddsp=1
+persist.camera.llc=1
+persist.camera.llnoise=1
+camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.google.android.GoogleCamera
+
+# Display power reduction (FOSS)
+ro.qcom.dpps.sensortype=3
+ro.qualcomm.display.paneltype=1
+ro.qualcomm.foss=1
+config.foss.xml=1
+config.foss.path=/system/etc/FOSSConfig.xml
+>>>>>>> 8835354... op3: Update to N camera blobs
 
 # CNE
 persist.cne.feature=1

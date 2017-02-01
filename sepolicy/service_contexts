@@ -1,2 +1,4 @@
 # Goodix Fingerprint
 goodix.fp                       u:object_r:gx_fpd_service:s0
+ifaadaemon                           u:object_r:ifaadaemon_service:s0
+android.samsung.IRemosaicDaemon      u:object_r:remosaic_service:s0

@@ -383,4 +383,10 @@
 
     <!-- Flag indicating which package name can access the persistent data partition -->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
+<!-- Enable Google move gestures. -->
+  <bool name="config_gesture_settings_enabled">true</bool>
+
+
+
 </resources>

@@ -36,7 +36,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
+   # external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -67,14 +67,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # ANT
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+#PRODUCT_PACKAGES += \
+  #  AntHalService \
+ #   com.dsi.ant.antradio_library \
+#    libantradio
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8937 \
     audio.r_submix.default \
@@ -82,8 +81,18 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcompostprocbundle \
+    libqcomvoiceprocessingdescriptors \
+    #audio.a2dp.default \
+    #audio.usb.default \
+    #audio.r_submix.default \
+    libaudio-resampler \
     tinymix
+
+PRODUCT_PACKAGES += \
+     android.hardware.audio@2.0-impl \
+     android.hardware.audio.effect@2.0-impl \
+     android.hardware.broadcastradio@1.0-impl \
+     android.hardware.soundtrigger@2.0-impl
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -124,7 +133,10 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@3.2-impl \
     camera.msm8937 \
+    libmm-qcamera \
     Snap
 
 # Display
@@ -163,19 +175,19 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 # GPS
-PRODUCT_PACKAGES += \
-    gps.msm8937
+#PRODUCT_PACKAGES += \
+#    gps.msm8937
 
-PRODUCT_BOOT_JARS += \
-    com.qti.location.sdk
+#PRODUCT_BOOT_JARS += \
+ #   com.qti.location.sdk
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/gps/etc/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
+#PRODUCT_COPY_FILES += \
+   # $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
+ #3   $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
+#    $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
+    #$(LOCAL_PATH)/gps/etc/lowi.conf:system/etc/lowi.conf \
+   # $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
+###    $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -208,7 +220,8 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8937
+   android.hardware.light@2.0-impl \
+   lights.msm8937
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -218,8 +231,8 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
+    #libOmxVdec \
+    #libOmxVenc \
     libstagefrighthw
 
 # Power
@@ -254,6 +267,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
 
+PRODUCT_PACKAGES += \
+      android.hardware.sensors@1.0-impl \
+      libjni_proximityCalibrate \
+      ProximityCalibrate \
+      sensors.msm8937
+
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
@@ -283,3 +302,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+
+persist.media.treble_omx=false

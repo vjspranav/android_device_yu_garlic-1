@@ -128,6 +128,7 @@ BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # CNE / DPM
 BOARD_USES_QCNE := true

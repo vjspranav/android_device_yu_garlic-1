@@ -20,7 +20,9 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     libgps.utils \
     libdl \
-    libloc_pla
+    libloc_pla \
+    libandroid_runtime 
+  
 
 LOCAL_SRC_FILES += \
     LocApiBase.cpp \

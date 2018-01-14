@@ -209,16 +209,16 @@ PRODUCT_PACKAGES += \
     lights.msm8937
 
 # OMX
-PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw
+#PRODUCT_PACKAGES += \
+#    libc2dcolorconvert \
+#    libOmxAacEnc \
+#    libOmxAmrEnc \
+#    libOmxCore \
+#    libOmxEvrcEnc \
+#    libOmxQcelp13Enc \
+#    libOmxVdec \
+#    libOmxVenc \
+#    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
@@ -284,3 +284,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# Default OMX service to non-Treble
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
+

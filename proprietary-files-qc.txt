@@ -106,6 +106,7 @@ vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 
 # Radio
+-app/SimSettings/SimSettings.apk|09eec5f9c778050ea03f0656fa1bb31247727172
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd

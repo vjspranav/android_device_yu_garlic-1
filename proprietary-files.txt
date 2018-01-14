@@ -551,6 +551,7 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
+vendor/lib64/libtinyxml2_1.so|eb4cd93e051980b8b35f5eeebd3d980e033cb87f
 vendor/lib/hw/vulkan.msm8937.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -598,6 +599,7 @@ vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 vendor/lib/libsdm-disp-apis.so
 vendor/lib/libsdmextension.so
+vendor/lib/libtinyxml2_1.so|fddc48298389f15337c65a1b1fa3361925fa937e
 
 # Graphics firmware
 etc/firmware/a225_pfp.fw
